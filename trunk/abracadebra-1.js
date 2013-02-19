@@ -6,7 +6,7 @@
 	var no_of_img = 5,
 		parent_id = 'debra',
 		inital_pic = 'frog green', 
-		css = '#debra{margin:auto;width:600px;}.ip{margin:auto;padding:0 50px;}#debra input{font-size: 1.2em; height:50px; margin-top:10px; padding:10px; border-radius:5px;aline:cete} #debra .thumb{height:100px;width:100px;border-radius:5px;margin:0 5px;} #debra .v{visibility: visible;opacity: 1;transition: opacity 2s linear;} #debra .h{visibility: hidden;opacity: 0;transition: visibility 0s 1s, opacity 1s linear;display:none;}',
+		css = '#debra{margin:auto;width:600px;}.ip{margin:auto;padding:0 50px;}#debra input{font-size: 1.2em; height:50px; margin-top:10px; padding:10px; border-radius:5px;aline:cete} #debra .thumb{height:100px;width:100px;border-radius:5px;margin:0 5px;padding:0px;border:none;} #debra .v{visibility: visible;opacity: 1;transition: opacity 2s linear;} #debra .h{visibility: hidden;opacity: 0;transition: visibility 0s 1s, opacity 1s linear;display:none;}',
 		flickr_url = 'http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=icb&tagmode=any&format=json&',
 
 		
