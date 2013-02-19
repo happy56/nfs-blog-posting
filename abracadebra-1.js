@@ -49,7 +49,7 @@
 			}
 			//ei('output').innerHTML = '';
 			ei('output').appendChild(fr);
-			console.log(ob);
+			//console.log(ob);
 		},
 		image_search = function(tags){
 			var url = flickr_url + 'tags='+tags,
