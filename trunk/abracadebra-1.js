@@ -139,7 +139,6 @@
 			text = ce('span','sc-b');
 			text.innerHTML = '; <br>  if ( score > 79){ greade = A;} <br> ... <br> print greade; <b class=g> // Output greade : <b id=scr>?</b>  </b> ';
 			fr.appendChild(text);
-
 			ei(grade_id).appendChild(fr);			
 
 
@@ -211,7 +210,7 @@
 			// end of debra
 			init2_variables();
 		};
-	init();
+	//init();
 	w.icb = icb;
 	w.cat = cat;
 }(window, window.document));
