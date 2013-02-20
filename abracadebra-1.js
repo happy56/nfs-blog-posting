@@ -33,7 +33,7 @@
 		cat = function(ob){ //cat callback
 			
 			cat_array = ob.items;
-			console.log(cat_array);
+			
 		},
 		icb = function(ob){
 			var i, 
@@ -82,11 +82,15 @@
 		add_cat = function(e, no) {
 			var fr = dfr(), 
 				i,
-			    img;
+			    img,
+			    len = cat_array;
 			    //console.log('hhhhhh addd');
 			
 			// check if object.items is not empty
+			console.log(cat_array[0].media.m, cat_array.length);
+
 			for (i = 0; i < no; i+=1) { 
+				//if()
 				img = ce('img', 'timg-' + i, 'thumb v', cat_array[i].media.m);
 				fr.appendChild(img);
 			}
