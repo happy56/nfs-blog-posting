@@ -12,7 +12,7 @@
 		inital_pic = 'frog green', 
 		css = '#debra, #variable,#loop,#condition{margin:auto;width:600px;}#var_id{font-size:.75em;}.g{color:green;}.ip{margin:auto;padding:0 50px;}#debra input{font-size: 1.2em; height:50px; margin-top:10px; padding:10px; border-radius:5px;aline:cete} #debra .thumb, #loop .thumb{height:100px;width:100px;border-radius:5px;margin:5px; padding:0px;border:none;} #debra .v{visibility: visible;opacity: 1;transition: opacity 2s linear;} #debra .h{visibility: hidden;opacity: 0;transition: visibility 0s 1s, opacity 1s linear;display:none;}',
 		flickr_url = 'http://api.flickr.com/services/feeds/photos_public.gne?tagmode=any&format=json&',
-		cat_array = {},
+		cat_array = [],
 		ei = function(e) {
 			return d.getElementById(e);
 		}, 
@@ -31,9 +31,13 @@
 			return d.createDocumentFragment();
 		},
 		cat = function(ob){ //cat callback
+			var i, len = ob.items.length;
 			
-			cat_array = ob.items;
-			console.log(cat_array);
+			for(i=0; i<len; i+=1) {
+				cat_array[i] = ob.items[i].media.m;	
+			}
+			
+			
 			
 		},
 		icb = function(ob){
@@ -84,15 +88,15 @@
 			var fr = dfr(), 
 				i,
 			    img,
-			    len = cat_array;
-			    //console.log('hhhhhh addd');
+			    j=0,
+			    len = cat_array.length;
 			
-			// check if object.items is not empty
-			console.log(cat_array[0].media.m, cat_array.length);
-
-			for (i = 0; i < no; i+=1) { 
-				//if()
-				img = ce('img', 'timg-' + i, 'thumb v', cat_array[i].media.m);
+			for (i = 0, j=0; i < no; i+=1, j +=1) { 	
+				if (j >= len){
+					j = 0;
+				}
+				
+				img = ce('img', 'timg-' + i, 'thumb v', cat_array[j]);
 				fr.appendChild(img);
 			}
 			ei(e).appendChild(fr);
@@ -185,7 +189,7 @@
 			
 			// cat_array
 			ei(loop_id).appendChild(fr);
-			image_search('cat','cat');	
+				
 		},
 		start_lock = function(){
 			if(typeof boo === 'undefined'){
@@ -202,7 +206,7 @@
 				itext = ce('input', 'itext');
 
 
-			console.log('init is called! ');
+			console.log(' ABRA-CA-DEBRA! goto : https://code.google.com/p/nfs-blog-posting/source/browse/trunk/abracadebra-1.js');
 			sty.innerHTML = css;
 			fr.appendChild(sty);
 			fr.appendChild(out);
@@ -220,18 +224,20 @@
 
 			ei(debra_id).appendChild(fr);
 			image_search(inital_pic);
+			image_search('cat','cat');
 			// end of debra
 			init2_variables();
+
 		};
 	
-	console.log('call init');
-	if(start_lock()){
+	
+	if(start_lock()){ // blogger calls this js 2times. I don't know why. So, I am using this lock
 		init();	
 	}
 	
-	console.log('after init');
+	
 
 	w.icb = icb;
 	w.cat = cat;
-	w.cat_array = cat_array;
+	
 }(window, window.document));
