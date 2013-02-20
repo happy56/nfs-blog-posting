@@ -33,7 +33,7 @@
 		cat = function(ob){ //cat callback
 			
 			cat_array = ob.items;
-			console(cat_array);
+			console.log(cat_array);
 			
 		},
 		icb = function(ob){
