@@ -37,7 +37,7 @@
 				cat_array[i] = ob.items[i].media.m;	
 			}
 			
-			
+			console.log('where is my cats:', cat_array);
 			
 		},
 		icb = function(ob){
@@ -100,6 +100,7 @@
 				fr.appendChild(img);
 			}
 			ei(e).appendChild(fr);
+			console.log('where is my cats:', cat_array);
 		},
 		calculate_greade = function(){
 			var score = parseFloat(ei('score').value),
