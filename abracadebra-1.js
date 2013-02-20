@@ -232,4 +232,5 @@
 
 	w.icb = icb;
 	w.cat = cat;
+	w.cat_array = cat_array;
 }(window, window.document));
