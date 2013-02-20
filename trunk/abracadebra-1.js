@@ -1,6 +1,7 @@
 /*
 	
 */
+
 (function(w,d){
 	"use strict";
 	var no_of_img = 5,
@@ -180,6 +181,12 @@
 			ei(loop_id).appendChild(fr);
 			image_search('cat','cat');	
 		},
+		start_lock = function(){
+			if(typeof boo === 'undefined'){
+				w.boo = 'locked';
+				return true;
+			}return false;
+		},
 		init = function(){
 			var fr = dfr(), 
 				out = ce('div','output'),
@@ -212,7 +219,10 @@
 		};
 	
 	console.log('call init');
-	init();
+	if(start_lock()){
+		init();	
+	}
+	
 	console.log('after init');
 
 	w.icb = icb;
