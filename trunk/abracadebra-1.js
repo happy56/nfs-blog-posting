@@ -189,7 +189,7 @@
 				itext = ce('input', 'itext');
 
 
-
+			console.log('init is called! ');
 			sty.innerHTML = css;
 			fr.appendChild(sty);
 			fr.appendChild(out);
@@ -210,7 +210,11 @@
 			// end of debra
 			init2_variables();
 		};
-	//init();
+	
+	console.log('call init');
+	init();
+	console.log('after init');
+
 	w.icb = icb;
 	w.cat = cat;
 }(window, window.document));
